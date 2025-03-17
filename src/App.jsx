@@ -1,14 +1,13 @@
 
 import './App.css'
 
+
 function App() {
 
+    return <button className="square">X</button>;
 
-  return (
-    <>
-   
-    </>
-  )
+ 
+  
 }
 
 export default App
