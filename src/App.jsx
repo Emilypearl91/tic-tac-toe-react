@@ -1,11 +1,13 @@
-
+import { useState } from 'react';
 import './App.css'
-//creating a reuseable component to be able to pass data when user clicks the square
-//pass the value prop 
-function Square({ value }) {
+//creating a reuseable component to be able to pass data when user clicks the square 
+function Square() {
+//removed the value prop and replaced it with useState to change the box to have an "x" when clicked
+const [value,setValue] = useState(null);
   //interactive component
 function handleClick(){
-  console.log('clicked!');
+  // square should display "x" when clicked
+  setValue('X');
 }
   return <button className="square" onClick={handleClick}>{value}</button>;
  }
@@ -21,19 +23,19 @@ function App() {
    {/* passing the value prop to each box */}
   
      <div className="board-row">
-     <Square value="1" />
-     <Square value="2" />
-     <Square value="3" />
+     <Square />
+     <Square />
+     <Square />
    </div>
    <div className="board-row">
-     <Square value="4" />
-     <Square value="5" />
-     <Square value="6" />
+     <Square />
+     <Square />
+     <Square />
    </div>
    <div className="board-row">
-     <Square value="7" />
-     <Square value="8" />
-     <Square value="9" />
+     <Square />
+     <Square />
+     <Square />
    </div>
 
  </>
