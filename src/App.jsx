@@ -1,9 +1,13 @@
 
 import './App.css'
-// creating a reuseable component to be able to pass data when user clicks the square
+//creating a reuseable component to be able to pass data when user clicks the square
 //pass the value prop 
 function Square({ value }) {
-  return <button className="square">{value}</button>;
+  //interactive component
+function handleClick(){
+  console.log('clicked!');
+}
+  return <button className="square" onClick={handleClick}>{value}</button>;
  }
  
 
