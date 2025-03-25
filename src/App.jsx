@@ -23,7 +23,7 @@ function App() {
     {/* tic tac toe board */}
 
    {/* passing the value prop to each box */}
-  // arrow functions call handle click when square is clicked
+   {/* arrow functions call handle click when square is clicked */}
    <div className="board-row">
     <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
     <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
