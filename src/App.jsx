@@ -8,6 +8,8 @@ function Square({value, onSquareClick}) {
  
 
 function App() {
+  // set another state to make "x" the default 
+  const [xIsNext, setXIsNext] = useState(true);
   // declaring a shared state in the parent component to collect data from child components
   //the array corresponds with a square
   // set square function rerenders the board
@@ -15,9 +17,21 @@ function App() {
   // defining the handle click to update the array 
   // i argument takes the index of square to update
   function handleClick(i) {
+  // to ensure that a turn doesnt get overwritten, check if the square already has a value
+    if (squares[i]) {
+      return;
+    }
     const nextSquares = squares.slice();
     nextSquares[i] = "X";
-    setSquares(nextSquares);
+    // each time a square is clicked , xIsNext boolean will flip causing the value to change from "x" to "o"
+    if (xIsNext) {
+      nextSquares[i] = "X";
+    } else {
+      nextSquares[i] = "O";
+    }
+    setSquares(nextSquares); 
+
+    setXIsNext(!xIsNext);
   }
     return <>
     {/* tic tac toe board */}
